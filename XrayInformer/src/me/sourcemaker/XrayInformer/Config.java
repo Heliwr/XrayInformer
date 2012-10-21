@@ -17,7 +17,6 @@ package me.sourcemaker.XrayInformer;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public class Config {
-	
 	private XrayInformer plugin;
 	private FileConfiguration config;
 	
@@ -37,6 +36,7 @@ public class Config {
 		config.addDefault("lapis", true);
 		config.addDefault("iron", true);
 		config.addDefault("mossy", true);
+		config.addDefault("emerald", true);
 		
 		config.addDefault("diamond_warn", 3.2);
 		config.addDefault("diamond_confirmed", 3.8);
@@ -44,6 +44,9 @@ public class Config {
 		config.addDefault("gold_warn", 8.0);
 		config.addDefault("gold_confirmed", 10.0);
 		
+		config.addDefault("emerald_warn", 0.3);
+		config.addDefault("emerald_confirmed", 0.5);
+
 		config.addDefault("lapis_warn", 3.2);
 		config.addDefault("lapis_confirmed", 3.8);
 		
@@ -65,8 +68,7 @@ public class Config {
 		return config.getDouble(ore + "_" + type);
 	}
 	
-	public String defaultWorld()
-	{
+	public String defaultWorld() {
 		return config.getString("default_world");
 	}
 	
